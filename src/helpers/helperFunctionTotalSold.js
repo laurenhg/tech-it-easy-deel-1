@@ -1,4 +1,4 @@
-export {bestSellingTv}  from "./constants/inventory.js";
+export {bestSellingTv}  from "../constants/inventory.js";
 
 // 1. Maak een functie die de voorraad van een TV object aanpast.
 

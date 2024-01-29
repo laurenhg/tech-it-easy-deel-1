@@ -1,4 +1,4 @@
-export {bestSellingTv}  from "./constants/inventory.js";
+export {bestSellingTv}  from "../constants/inventory.js";
 
 export function calculatePurchasedTvs(inventory) {
     let totalPurchased = 0;

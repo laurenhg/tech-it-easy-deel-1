@@ -72,7 +72,7 @@ export let inventory = [
             }
         ],
         originalStock: 23,
-        sold: 2,
+        sold: 3,
     },
     {
         type: 'NH3216SMART',
