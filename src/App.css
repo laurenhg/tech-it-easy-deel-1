@@ -46,12 +46,15 @@ flex-direction: column;
 }
 
 .outer-container {
+    padding: 60px;
     display: flex;
     align-items: center;
     /*flex-direction: column;*/
     /*justify-content: center;*/
     /*align-content: space-around;*/
-    border: 2px solid red;
+    border: 1px dashed gray;
+    border-radius: 10px;
+    background-color: lightgray;
 }
 .box1 {
     text-align: center;
@@ -62,6 +65,12 @@ flex-direction: column;
     border : 1px solid darkgreen;
 
 
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+padding-left: 40px;
 }
 
 .box2 {
