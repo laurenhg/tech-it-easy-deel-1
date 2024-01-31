@@ -1,12 +1,14 @@
 import './App.css';
 import ImageWrapper from "./imageWrapper.js";
 import { getTvName} from "./helpers/tvNameHelper.js";
-import { getTvPrice} from "./helpers/tvPrice Helper.js";
+import { getTvPrice} from "./helpers/tvPriceHelper.js";
 import {getScreenSize} from "./helpers/tvScreensHelper.js";
 import {bestSellingTv, calculateSoldTvs} from "./helpers/helperFunctionTotalSold.js";
 import {calculatePurchasedTvs} from "./helpers/helperFunctionTotalPurchased.js";
 import {calculateRemainingTvs} from "./helpers/helperFuntionTotalRemaining.js";
 import { inventory } from "./constants/inventory.js";
+import check from "./assets/check.png";
+import minus from "./assets/minus.png";
 
 function App() {
     const totalSold = calculateSoldTvs(inventory);
@@ -46,13 +48,19 @@ function App() {
 <ImageWrapper/>
             </div>
                 {/*<div className="inner-container-2">*/}
-
-                    <div className="text-container">
-                        <h2>{getTvName(bestSellingTv)}</h2>
-                        <h1>{getTvPrice(bestSellingTv)}</h1>
-                        <h2>{getScreenSize(inventory[0])}</h2>
+                <div className="text-container">
+                    <h2>{getTvName(bestSellingTv)}</h2>
+                    <h1>{getTvPrice(bestSellingTv)}</h1>
+                    <h2>{getScreenSize(inventory[0])}</h2>
+                {/*</div>*/}
+                {/*    <div className= "inner-container2">*/}
+                    <img className="buttons" src={check} alt=""/> <p>wifi</p>
+                    <img className="buttons" src={minus} alt=""/> <p>speech</p>
+                    <img className="buttons" src={check} alt=""/> <p>hdr</p>
+                    <img className="buttons" src={check} alt=""/> <p>bluetooth</p>
+                    <img className="buttons" src={minus} alt=""/> <p>ambilight</p>
                     </div>
-                </div>
+            </div>
 
         </>
     );

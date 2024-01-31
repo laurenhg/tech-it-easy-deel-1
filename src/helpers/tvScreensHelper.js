@@ -7,3 +7,4 @@ export function getScreenSize(tv) {
 
     return sizesString;
 }
+

@@ -33,10 +33,10 @@ body {
     justify-content: space-around;
 }
 
-.inner-container-2 {
+.inner-container2 {
 
     display: flex;
-flex-direction: column;
+flex-direction: row;
 
     /*align-content: flex-end;*/
     /*justify-content: center;*/
@@ -95,4 +95,14 @@ padding-left: 40px;
     border: 1px solid red;
 
 
+}
+
+.feature-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttons {
+    heigh: 15px;
+    width: 15px;
 }
