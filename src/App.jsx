@@ -92,17 +92,40 @@ function App() {
             </div>
             {inventory.map((tv) => (
                 <div key={tv.type} className="alltvs-outer-container">
-                <div className="image-container">
-                    <ImageWrapper/>
+                    <div className="image-container">
+                        <ImageWrapper/>
+                    </div>
+                    {/*<div className="inner-container-2">*/}
+                    <div className="text-container">
+                        <h2>{getTvName(tv)}</h2>
+                        <h1>{getTvPrice(tv)}</h1>
+                        <h2>{getScreenSize(tv)}</h2>
+                    </div>
+                    <article className="button-container">
+                        <div className="button-item">
+                            <img className="buttons" src={check} alt=""/>
+                            <p>wifi</p>
+                        </div>
+                        <div className="button-item">
+                            <img className="buttons" src={minus} alt=""/>
+                            <p>speech</p>
+                        </div>
+                        <div className="button-item">
+                            <img className="buttons" src={check} alt=""/>
+                            <p>hdr</p>
+                        </div>
+                        <div className="button-item">
+                            <img className="buttons" src={check} alt=""/>
+                            <p>bluetooth</p>
+                        </div>
+                        <div className="button-item">
+                            <img className="buttons" src={minus} alt=""/>
+                            <p>ambilight</p>
+                        </div>
+                    </article>
+
                 </div>
-                {/*<div className="inner-container-2">*/}
-                <div className="text-container">
-                    <h2>{getTvName(tv)}</h2>
-                    <h1>{getTvPrice(tv)}</h1>
-                    <h2>{getScreenSize(tv)}</h2>
-                </div>
-            </div>
-                ))};
+            ))}
         </>
     )
 }
