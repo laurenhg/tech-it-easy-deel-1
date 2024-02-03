@@ -90,19 +90,21 @@ function App() {
             <div className="heading-container">
                 <h1 className="heading">All TV's</h1>
             </div>
-            <div className="outer-container">
+            {inventory.map((tv) => (
+                <div key={tv.type} className="alltvs-outer-container">
                 <div className="image-container">
                     <ImageWrapper/>
                 </div>
                 {/*<div className="inner-container-2">*/}
                 <div className="text-container">
-                    <h2>{getTvName(bestSellingTv)}</h2>
-                    <h1>{getTvPrice(bestSellingTv)}</h1>
-                    <h2>{getScreenSize(inventory[0])}</h2>
+                    <h2>{getTvName(tv)}</h2>
+                    <h1>{getTvPrice(tv)}</h1>
+                    <h2>{getScreenSize(tv)}</h2>
                 </div>
             </div>
+                ))};
         </>
-    );
+    )
 }
 
 export default App

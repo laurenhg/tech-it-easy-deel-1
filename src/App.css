@@ -72,6 +72,18 @@ body {
     border-radius: 10px;
     background-color: lightgray;
 }
+
+.alltvs-outer-container {
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*align-content: space-around;*/
+    border: 1px dashed gray;
+    border-radius: 10px;
+
+}
 .box1 {
     text-align: center;
     margin-top: 20px;
