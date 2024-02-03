@@ -400,3 +400,41 @@ console.log(largeScreenTvs);
 const ambiLight = inventory.filter((hasAmbilight) => hasAmbilight.options.some(option => option.name === 'ambiLight' && option.applicable === true));
 
 console.log(ambiLight);
+
+// Assignment 2a: Use an array method to display all TV brands (such as Philips, NIKKEI, etc.) in a list on the page. This gives the staff a clear overview of what they are selling. It is not a problem that there are duplicate brand names.
+
+//display inventory.brand in a list - use list method and use the .type as the unique ID key.
+
+// const brandList = inventory.map ((brand ) => {
+//     <li key={brand.type}> {brand.brand}</li>
+// });
+// console.log(brandList);
+
+// return (
+//     <ul>
+//         {inventory.map(( brand) => {
+//          <li key={brand.type}> {brand.brand}</li>
+//         })}
+//     </ul>
+// );
+
+// const brandList = inventory.map((brandName) => {
+//     return brandName.brand;
+//
+// return (
+//     <ul>
+//         {inventory.map((brandName) => {
+//             <li key={brandName.type}> {brandName.brand}</li>li>
+//         )}
+//     </ul>
+// );
+
+// const brandList = inventory.map(brandName => brandName.brand);
+//
+// return (
+//     <ul>
+//         {inventory.map(brandName => (
+//             <li key={brandName.type}>{brandName.brand}</li>
+//         ))}
+//     </ul>
+// );

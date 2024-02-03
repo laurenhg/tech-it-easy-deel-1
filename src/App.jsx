@@ -13,6 +13,7 @@ import minus from "./assets/minus.png";
 function App() {
     const totalSold = calculateSoldTvs(inventory);
     const totalPurchased = calculatePurchasedTvs(inventory);
+    const brandList = inventory.map(brandName => brandName.brand);
 
     return (
         <>
@@ -53,15 +54,53 @@ function App() {
                     <h1>{getTvPrice(bestSellingTv)}</h1>
                     <h2>{getScreenSize(inventory[0])}</h2>
                 {/*</div>*/}
-                {/*    <div className= "inner-container2">*/}
-                    <img className="buttons" src={check} alt=""/> <p>wifi</p>
-                    <img className="buttons" src={minus} alt=""/> <p>speech</p>
-                    <img className="buttons" src={check} alt=""/> <p>hdr</p>
-                    <img className="buttons" src={check} alt=""/> <p>bluetooth</p>
-                    <img className="buttons" src={minus} alt=""/> <p>ambilight</p>
-                    </div>
+                    <article className="button-container">
+                        <div className="button-item">
+                            <img className="buttons" src={check} alt=""/>
+                            <p>wifi</p>
+                        </div>
+                        <div className="button-item">
+                            <img className="buttons" src={minus} alt=""/>
+                            <p>speech</p>
+                        </div>
+                        <div className="button-item">
+                            <img className="buttons" src={check} alt=""/>
+                            <p>hdr</p>
+                        </div>
+                        <div className="button-item">
+                            <img className="buttons" src={check} alt=""/>
+                            <p>bluetooth</p>
+                        </div>
+                        <div className="button-item">
+                            <img className="buttons" src={minus} alt=""/>
+                            <p>ambilight</p>
+                        </div>
+                    </article>
             </div>
 
+            </div>
+            <div>
+
+                <ul>
+                    {inventory.map(brandName => (
+                        <li key={brandName.type}>{brandName.brand}</li>
+                    ))}
+                </ul>
+            </div>
+            <div className="heading-container">
+                <h1 className="heading">All TV's</h1>
+            </div>
+            <div className="outer-container">
+                <div className="image-container">
+                    <ImageWrapper/>
+                </div>
+                {/*<div className="inner-container-2">*/}
+                <div className="text-container">
+                    <h2>{getTvName(bestSellingTv)}</h2>
+                    <h1>{getTvPrice(bestSellingTv)}</h1>
+                    <h2>{getScreenSize(inventory[0])}</h2>
+                </div>
+            </div>
         </>
     );
 }
