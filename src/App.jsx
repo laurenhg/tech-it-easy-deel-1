@@ -93,8 +93,11 @@ function App() {
             {inventory.map((tv) => (
                 <div key={tv.type} className="alltvs-outer-container">
                     <div className="image-container">
-                        <ImageWrapper/>
-                    </div>
+                         <span className="tv-image-wrapper">
+                        <img className="tv-image" src={tv.sourceImg} alt={tv.brand}/>
+                             {/*<ImageWrapper src={tv.sourceImg} alt={tv.brand} style={{ width: '100%', height: 'auto' }}/>*/}
+                         </span>
+                         </div>
                     {/*<div className="inner-container-2">*/}
                     <div className="text-container">
                         <h2>{getTvName(tv)}</h2>

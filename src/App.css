@@ -136,3 +136,20 @@ padding-left: 40px;
     border-radius: 50%;
     margin-right:10px;
 }
+
+.tv-image-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    flex-basis: auto;
+    max-width: 400px;
+
+    padding: 20px;
+}
+
+
+
+.tv-image {
+    width: 100%
+
+}
