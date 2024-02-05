@@ -72,7 +72,7 @@ export let inventory = [
             }
         ],
         originalStock: 23,
-        sold: 2,
+        sold: 3,
     },
     {
         type: 'NH3216SMART',
@@ -329,3 +329,112 @@ export let inventory = [
 ];
 
 
+
+
+// Assignment 1a: Use an array method to create an array containing all TV type names. Log the outcome in the console.
+
+const tvName = inventory.map((name) => {
+    return name.name;
+});
+
+console.log (tvName);
+
+// Assignment 1b: Use an array method to collect all information from the TVs that are completely sold out. Log the outcome in the console.
+
+const soldOutTvs = inventory.filter(soldout => soldout.originalStock === soldout.sold);
+console.log(soldOutTvs);
+
+
+// const soldOutTvDetails = soldOutTvs.map((soldoutdetail) => {
+//     return { ...soldoutdetail };
+// });
+//
+// console.log(soldOutTvDetails);
+// ********
+
+// Assignment 1c: Use an array method to retrieve the information of the TV type 'NH3216SMART'.
+
+const tvType = inventory.find(tv => tv.type === 'NH3216SMART');
+console.log(tvType);
+
+
+// Assignment 1d: Use an array method to create a list of brand and TV names indicating whether they are suitable for sports viewers (a refresh rate of 100Hz or higher). Do this in the format { name: 'Toshiba HD TV', suitable: false }. Log the outcome in the console.
+
+const refreshRate = inventory.filter(refresh => refresh.refreshRate >=100);
+console.log(refreshRate);
+
+const watchSports = inventory.map((watchSport) =>{
+    return {
+        brand: watchSport.brand,
+        name: watchSport.name,
+        suitable: watchSport.refreshRate >=100,
+    }
+});
+console.log(watchSports)
+
+// Assignment 1st (Challenge): Use array methods to collect all information from the TVs available in screen sizes of 65 inches and larger.
+// This is like writing a method within a method...
+// Here is the for loop version:
+
+// const largeScreenTVs = [];
+//
+// for (let i = 0; i < inventory.length; i++) {
+//     const tv = inventory[i];
+//     if (tv.availableSizes.some(screenSize => screenSize >= 65)) {
+//         largeScreenTVs.push(tv);
+//     }
+// }
+//
+// console.log(largeScreenTVs);
+
+// here is the array method version using some() as my second method (to filter through the nested array).
+
+const largeScreenTvs = inventory.filter((largeScreen) =>largeScreen.availableSizes.some(screenSize => screenSize >=65));
+
+console.log(largeScreenTvs);
+
+
+// Assignment 1f (challenge): Use array methods to collect all information from the TVs that have ambilight. Log the outcome in the console.
+// This is a task to filter information from a nested array, within an object, within a larger array. I will need to use .inventory and .options and check if both name:ambilight === true and also if applicable === true.
+
+const ambiLight = inventory.filter((hasAmbilight) => hasAmbilight.options.some(option => option.name === 'ambiLight' && option.applicable === true));
+
+console.log(ambiLight);
+
+// Assignment 2a: Use an array method to display all TV brands (such as Philips, NIKKEI, etc.) in a list on the page. This gives the staff a clear overview of what they are selling. It is not a problem that there are duplicate brand names.
+
+//display inventory.brand in a list - use list method and use the .type as the unique ID key.
+
+// const brandList = inventory.map ((brand ) => {
+//     <li key={brand.type}> {brand.brand}</li>
+// });
+// console.log(brandList);
+
+// return (
+//     <ul>
+//         {inventory.map(( brand) => {
+//          <li key={brand.type}> {brand.brand}</li>
+//         })}
+//     </ul>
+// );
+
+// const brandList = inventory.map((brandName) => {
+//     return brandName.brand;
+//
+// return (
+//     <ul>
+//         {inventory.map((brandName) => {
+//             <li key={brandName.type}> {brandName.brand}</li>li>
+//         )}
+//     </ul>
+// );
+
+// const brandList = inventory.map(brandName => brandName.brand);
+//
+// return (
+//     <ul>
+//         {inventory.map(brandName => (
+//             <li key={brandName.type}>{brandName.brand}</li>
+//         ))}
+//     </ul>
+// );
