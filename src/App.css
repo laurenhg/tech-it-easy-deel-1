@@ -153,3 +153,9 @@ padding-left: 40px;
     width: 100%
 
 }
+
+.square-button-container {
+    disply:flex;
+
+
+}

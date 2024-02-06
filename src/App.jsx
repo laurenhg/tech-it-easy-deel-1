@@ -15,45 +15,67 @@ function App() {
     const totalPurchased = calculatePurchasedTvs(inventory);
     const brandList = inventory.map(brandName => brandName.brand);
 
+
+        function sortBestSellers () {
+            inventory.sort ((a,b) => {
+                return a.sold - b.sold
+            });
+            console.log(inventory);
+        }
+
+        function sortPriceLow () {
+            inventory.sort((a,b) => {
+                return a.price - b.price
+            });
+            console.log(inventory);
+        }
+
+        function sortBestSports () {
+            inventory.sort((a, b) =>{
+                return b.refreshRate - a.refreshRate
+            });
+            console.log(inventory);
+        }
     return (
         <>
-        <div>
-            <div className="heading-container">
-            <h1 className="heading">Tech it easy dashboard</h1>
-            <h2 className ="sales-summary"> sales summary</h2>
-            </div>
+            <div>
+                <div className="heading-container">
+                    <h1 className="heading">Tech it easy dashboard</h1>
+                    <h2 className="sales-summary"> sales summary</h2>
+                </div>
 
-            <div className="inner-container">
-                <article className="box1" style={{backgroundColor: "lightgreen"}}>
+                <div className="inner-container">
+                    <article className="box1" style={{backgroundColor: "lightgreen"}}>
                         <p> Total TVs sold</p>
                         <p>{totalSold}</p>
-                </article>
-                <article className= "box2" style={{backgroundColor: "lightblue"}}>
+                    </article>
+                    <article className="box2" style={{backgroundColor: "lightblue"}}>
                         <p>Total TVs Purchased</p>
                         <p>{totalPurchased}</p>
 
-                </article>
-<article className="box3" style={{backgroundColor: "lightpink"}}>
+                    </article>
+                    <article className="box3" style={{backgroundColor: "lightpink"}}>
                         <p>Total TVs Remaining</p>
                         <p>{calculateRemainingTvs(inventory)}</p>
 
-</article>
-            </div>
-        </div>
-
-                <div className="heading-container">
-                    <h1 className="heading">Best Seller</h1>
+                    </article>
                 </div>
-            <div className="outer-container">
-<div className="image-container">
-<ImageWrapper/>
             </div>
+
+
+            <div className="heading-container">
+                <h1 className="heading">Best Seller</h1>
+            </div>
+            <div className="outer-container">
+                <div className="image-container">
+                    <ImageWrapper/>
+                </div>
                 {/*<div className="inner-container-2">*/}
                 <div className="text-container">
                     <h2>{getTvName(bestSellingTv)}</h2>
                     <h1>{getTvPrice(bestSellingTv)}</h1>
                     <h2>{getScreenSize(inventory[0])}</h2>
-                {/*</div>*/}
+                    {/*</div>*/}
                     <article className="button-container">
                         <div className="button-item">
                             <img className="buttons" src={check} alt=""/>
@@ -76,7 +98,7 @@ function App() {
                             <p>ambilight</p>
                         </div>
                     </article>
-            </div>
+                </div>
 
             </div>
             <div>
@@ -86,6 +108,11 @@ function App() {
                         <li key={brandName.type}>{brandName.brand}</li>
                     ))}
                 </ul>
+            </div>
+            <div className="square-button-container">
+                <button type="button" onClick={sortBestSellers}>Most sold first</button>
+                <button type="button" onClick={sortPriceLow}>Cheapest first</button>
+                <button type="button" onClick={sortBestSports}>Most suitable for sports</button>
             </div>
             <div className="heading-container">
                 <h1 className="heading">All TV's</h1>
@@ -97,7 +124,7 @@ function App() {
                         <img className="tv-image" src={tv.sourceImg} alt={tv.brand}/>
                              {/*<ImageWrapper src={tv.sourceImg} alt={tv.brand} style={{ width: '100%', height: 'auto' }}/>*/}
                          </span>
-                         </div>
+                    </div>
                     {/*<div className="inner-container-2">*/}
                     <div className="text-container">
                         <h2>{getTvName(tv)}</h2>
